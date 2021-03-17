@@ -4,10 +4,12 @@
 
 ## Installation
 1. Clone repo ``` git clone ...```
-2. Create virtualenv ```virtualenv -p python3 venv```
-3. Activate virtualenv ```source venv/bin/activate```
-4. Create DB ```python3``` ```from contacts import db``` ```db.create_all()```
-5. Run in localhost ```python api.py```
+2. Create virtualenv ```python3 -m venv venv```
+3. Install Flask and Flask SQLAlchey ```pip install flask Flask-SQLAlchemy```
+4. Install SQLAlchemy sperately since ver 1.4.0 automatically included in Flask SQLAlchemy causes Assertion Error ```pip install SQLAlchemy==1.3.23```
+5. Activate virtualenv ```source venv/bin/activate```
+6. Create DB ```python3``` ```from contacts import db``` ```db.create_all()``` ```exit()```
+7. Run in localhost ```python api.py```
 
 ### <USER STORIES>
 
