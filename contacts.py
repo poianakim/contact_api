@@ -3,6 +3,7 @@ import json
 
 # initializing db with sqlalchemy class
 db = SQLAlchemy(app)
+# In termnal with python => import this db from this file(contacts) then db.create_all()
 
 
 class Contact(db.Model):
@@ -15,7 +16,7 @@ class Contact(db.Model):
 
     #  convert data in json format
     def json(self):
-        return {'name': self.first.capitalize() + ", " + self.second.capitalize(), 'number': self.number}
+        return {'id': self.id, 'firstname': self.first.capitalize(), 'secondname': self.second.capitalize(), 'number': self.number}
 
     def add_contact(_first, _second, _number):
         new_contact = Contact(first=_first.lower(),
@@ -29,19 +30,19 @@ class Contact(db.Model):
             result.append(Contact.json(contact))
         return result
 
-    def get_contact(_first):
-        result = []
-        for contact in Contact.query.filter_by(first=_first).all():
-            result.append(Contact.json(contact))
-        return result
+    def get_contact(_id):
+        try:
+            return Contact.json(Contact.query.filter_by(id=_id).first())
+        except:
+            return 'No Contact Found'
 
-    def update_contact(_first, new_first, new_second, new_number):
-        contact_update = Contact.query.filter_by(first=_first).first()
+    def update_contact(_id, new_first, new_second, new_number):
+        contact_update = Contact.query.filter_by(id=_id).first()
         contact_update.first = new_first
         contact_update.second = new_second
         contact_update.number = new_number
         db.session.commit()
 
-    def delete_contact(_first):
-        Contact.query.filter_by(first=_first).delete()
+    def delete_contact(_id):
+        Contact.query.filter_by(id=_id).delete()
         db.session.commit()
