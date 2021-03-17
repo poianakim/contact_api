@@ -4,7 +4,7 @@
 
 ## Installation
 1. Clone repo ``` git clone ...```
-2. Create virtualenv ```virtualenv -p python3 venv```
+2. Create virtualenv ```python3 -m venv venv```
 3. Activate virtualenv ```source venv/bin/activate```
 4. Create DB ```python3``` ```from contacts import db``` ```db.create_all()```
 5. Run in localhost ```python api.py```
