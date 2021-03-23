@@ -17,6 +17,8 @@ class Contact(db.Model):
     #  convert data in json format
     def json(self):
         return {'id': self.id, 'firstname': self.first.capitalize(), 'secondname': self.second.capitalize(), 'number': self.number}
+        # return jsonify(id=self.id, firstname=self.first.capitalize(),
+        #                # secondname=self.second.capitalize(), number=self.number)
 
     def add_contact(_first, _second, _number):
         new_contact = Contact(first=_first.lower(),
@@ -27,6 +29,8 @@ class Contact(db.Model):
     def get_all_contacts():
         result = []
         for contact in Contact.query.all():
+            print(type(contact))
+            print(json.dumps(Contact.json(contact)))
             result.append(Contact.json(contact))
         return result
 

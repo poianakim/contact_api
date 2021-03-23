@@ -6,7 +6,7 @@ from contacts import *
 @app.route('/contacts', methods=['GET'])
 def get_contacts():
     return jsonify(Contact.get_all_contacts())
-
+    # return jsonify(Contact.query.all())
 # get single data with id
 
 
