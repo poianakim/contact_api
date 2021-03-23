@@ -8,8 +8,9 @@
 3. Install Flask and Flask SQLAlchey ```pip install flask Flask-SQLAlchemy```
 4. Install SQLAlchemy sperately since ver 1.4.0 automatically included in Flask SQLAlchemy causes Assertion Error ```pip install SQLAlchemy==1.3.23```
 5. Activate virtualenv ```source venv/bin/activate```
-6. Create DB ```python3``` ```from contacts import db``` ```db.create_all()``` ```exit()```
-7. Run in localhost ```python api.py```
+6. Outputs the packages and produce requirements.txt ```pip freeze > requirements.txt```
+7. Create DB ```python3``` ```from contacts import db``` ```db.create_all()``` ```exit()```
+8. Run in localhost ```python api.py```
 
 ### <USER STORIES>
 
