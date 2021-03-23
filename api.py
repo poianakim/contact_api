@@ -12,17 +12,17 @@ def get_contacts():
 
 @app.route('/contacts/<int:id>', methods=['GET', 'PUT', 'DELETE'])
 def control_by_id(id):
-    if request.method == = 'GET':
+    if request.method == 'GET':
         contact = Contact.get_contact(id)
         return jsonify(contact)
-    elif request.method == = 'PUT':
+    elif request.method == 'PUT':
         new_contact = request.get_json()
         Contact.update_contact(
             id, new_contact['first'], new_contact['second'], new_contact['number'])
         response = Response('Contact Updated', 200,
                             mimetype='application/json')
         return response
-    elif request.method == = 'DELETE':
+    elif request.method == 'DELETE':
         Contact.delete_contact(id)
         response = Response('Contact Deleted', 200,
                             mimetype='application/json')
