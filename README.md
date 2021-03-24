@@ -16,7 +16,7 @@
 
 You can "GET" a contact by id with
 ```
-/contacts/<int:id>
+/api/contacts/<int:id>
 ```
 Response will be like
 ```
@@ -24,7 +24,7 @@ Response will be like
 ```
 You can "GET" all contacts with
 ```
-/contacts
+/api/contacts
 ```
 Response will be like
 ```
@@ -34,10 +34,10 @@ Response will be like
 
 You can "POST" a contact with
 ```
-/add
+/api/add
 ```
 You can PUT(UPDATE) a contact with id
 You can DELETE a contact with id
 ```
-/contacts/<int:id>
+/api/contacts/<int:id>
 ```

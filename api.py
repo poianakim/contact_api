@@ -3,14 +3,14 @@ from contacts import *
 # get all the contacts data
 
 
-@app.route('/contacts', methods=['GET'])
+@app.route('/api/contacts', methods=['GET'])
 def get_contacts():
     return jsonify(Contact.get_all_contacts())
     # return jsonify(Contact.query.all())
 # get single data with id
 
 
-@app.route('/contacts/<int:id>', methods=['GET', 'PUT', 'DELETE'])
+@app.route('/api/contacts/<int:id>', methods=['GET', 'PUT', 'DELETE'])
 def control_by_id(id):
     if request.method == 'GET':
         contact = Contact.get_contact(id)
@@ -30,7 +30,7 @@ def control_by_id(id):
 
 
 # add a contact data
-@app.route('/add', methods=['POST'])
+@app.route('/api/add', methods=['POST'])
 def add_contact():
     new_contact = request.get_json()
     Contact.add_contact(
