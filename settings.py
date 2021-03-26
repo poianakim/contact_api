@@ -13,9 +13,10 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 @app.route("/")
 @cross_origin()
-''' 
-If set to True (the default) Flask-SQLAlchemy will track 
-modifications of objects and emit signals. 
-This requires extra memory and can be disabled if not needed
-default is None but without setting to False the err msg keeps showing
-'''
+def helloWorld():
+    return "Hello Flask-Cors"
+
+# If set to True (the default) Flask-SQLAlchemy will track
+# modifications of objects and emit signals.
+# This requires extra memory and can be disabled if not needed
+# default is None but without setting to False the err msg keeps showing
